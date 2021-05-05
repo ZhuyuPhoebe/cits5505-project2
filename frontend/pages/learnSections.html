@@ -11,7 +11,7 @@
 <body>
     <div class="nav">
         <div>
-            <h2><a href="./index.html">Cits</a></h2>
+            <h2><a href="./index.htm">Cits</a></h2>
 			<div class="menu">
                 <ul>
                     <li><h3 id="user"></h3></li>
@@ -20,22 +20,18 @@
         </div>
     </div>
     <div style="display:flex;">
-      <div class="cusContainer col-xs-10 col-sm-8 col-md-8 col-lg-8">
-        <h3 class="center">Courses</h3>
-        <p class="center">Please start studying</p>
+      <div class="cusContainer col-xs-11 col-sm-11 col-md-11 col-lg-11">
+        <h2 class="center">Courses</h3> <a class="back" onclick="history.back();">Back</a>
+            <button class="right btn" style="width: 140px;" onclick="addLearn(event);">Record progress</button>
         <div class="center">
-            <table style="margin: 0 auto;" id="units">
-                <tr>
-                    <th width="100px">Course ID</th>
-                    <th width="300px">Course Name</th>
-                    <th width="300px">Operation</th>
-                </tr>
-            </table>
+            <div class="center" id="learn">
+            </div>
         </div>
     </div>
     </div>
     
 </body>
 <script type="text/javascript" src="../static/js/checkLogin.js"></script>
-<script type="text/javascript" src="../static/js/index.js"></script>
+<script type="text/javascript" src="../static/js/learnSections.js"></script>
+
 </html>
