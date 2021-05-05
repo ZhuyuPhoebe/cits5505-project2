@@ -227,3 +227,20 @@ conn.execute('''INSERT INTO `users` (`username`, `password`) VALUES
 ('111', '111111');''')
 conn.commit()
 print ("users Records Insert successfully")
+
+conn.execute('''CREATE TABLE IF NOT EXISTS `userLearn` (
+  `username` varchar(225) NOT NULL,
+  `UnitID` INTEGER NOT NULL,
+  `chapter` INTEGER NOT NULL
+);''')
+conn.commit()
+print ("Table userLearn created successfully")
+
+
+conn.execute('''CREATE TABLE IF NOT EXISTS `userQuiz` (
+  `username` varchar(225) NOT NULL,
+  `UnitID` INTEGER NOT NULL,
+  `score` INTEGER NOT NULL
+);''')
+conn.commit()
+print ("Table userQuiz created successfully")
