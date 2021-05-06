@@ -11,6 +11,7 @@ function login (e) {
 	 'password': pw},
 	function(data) {
 		if(data.code === 200) {
+			sessionStorage.setItem("username", user);
 			location.href="./index.html";
 		}
 		else {
