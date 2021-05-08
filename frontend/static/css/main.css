@@ -52,21 +52,6 @@ html, body {
     margin: 0;
 }
 
-.center-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.unit {
-    display: block;
-    background: red;
-    margin: 24px;
-    padding: 24px;
-    text-decoration: none;
-    color: #fff;
-}
-
 .btn {
     text-decoration: none;
     color: #fff;
@@ -82,26 +67,6 @@ html, body {
   text-align: center;
   background: black;
   position: relative;
-}
-
-#prevArrow{
-    position: absolute;
-    top: 50%;
-    left: 1.5%;
-    text-decoration: none;
-    z-index: 1;
-    font-size: 5em;
-    color: white;
-  }
-  
-#nextArrow {
-    position: absolute;
-    top:50%;
-    right:1.5%;
-    text-decoration: none;
-    z-index: 1;
-    font-size: 5em;
-    color: white;
 }
 
 .tabs {
@@ -136,7 +101,7 @@ html, body {
     margin: 0 40px;
 }
 
-.cusContainer {
+.cus-container {
     margin: 24px auto;
 }
 .title {
@@ -151,7 +116,7 @@ html, body {
     color: red;
 }
 
-.signUpBtn {
+.sign-up-btn {
 	float: right;
 	margin-top: 20px;
 }
@@ -173,22 +138,6 @@ input[type=text] {
 	border-radius: 13px;
 	border-color: transparent;
 	margin-bottom: 1%;
-}
-
-#list {
-	margin-left: 3em;
-	margin-right: 3em;
-	text-align: left;
-}
-
-.url {
-	position: relative;
-	display: inline-block;
-	margin-right: 20px;
-}
-
-.url a {
-	text-decoration: none;
 }
 
 hr {

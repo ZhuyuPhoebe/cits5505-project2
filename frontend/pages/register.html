@@ -11,7 +11,9 @@
 <body>
     <div class="nav">
         <div>
-            <h2><a href="./index.html">Cits</a></h2>
+            <h2>
+                <a href="./index.html">Cits</a>
+            </h2>
         </div>
 
     </div>
@@ -21,42 +23,30 @@
         </h2>
     </div>
     <div style="display:flex;">
-      <div class="cusContainer col-xs-8 col-sm-5 col-md-4 col-lg-4">
-            <form
-            class="form-horizontal"
-          >
-            <div class="title">
-              <h2>Sign up</h2>
-              <a href="./login.html" class="btn btn-primary signUpBtn">Sign in</a>
-            </div>
-            <div class="form-group">
-              <label for="username">Your name</label>
-              <input
-                type="username"
-                name="username"
-                class="form-control"
-                id="username"
-                placeholder="Username"
-              />
-            </div>
-            <div class="form-group">
-              <label for="password">Your password</label>
-              <input
-                name="password"
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Password"
-              />
-            </div>
-            <div class="form-group loginBtn">
-              <button type="button" class="btn btn-default" onclick="register(event)">Sign up</button>
-            </div>
-			    <p id="error"></p>
-          </form>
+        <div class="cus-container col-xs-8 col-sm-5 col-md-4 col-lg-4">
+            <form class="form-horizontal">
+                <div class="title">
+                    <h2>Sign up</h2>
+                    <a href="./login.html" class="btn btn-primary sign-up-btn">Sign in</a>
+                </div>
+                <div class="form-group">
+                    <label for="username">Your name</label>
+                    <input type="username" name="username" class="form-control" id="username" placeholder="Username" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Your password</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="Password" />
+                </div>
+                <div class="form-group loginBtn">
+                    <button type="button" class="btn btn-default" onclick="register(event)">
+                        Sign up
+                    </button>
+                </div>
+                <p id="error"></p>
+            </form>
+        </div>
     </div>
-    </div>
-    
+
 </body>
 <script type="text/javascript" src="../static/js/login.js"></script>
 
