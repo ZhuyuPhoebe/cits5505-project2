@@ -6,51 +6,63 @@ import sqlite3
 app = Flask(__name__)
 CORS(app)
 
+# test
 @app.route('/api/test')
 def hello():
     return 'Hello World!'
 
+# user login
 @app.route('/api/login', methods = ['POST'])
 def login():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
         conn = sqlite3.connect('cits.db')
         print ("Opened database successfully")
-        cursor = conn.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
-        rows = cursor.fetchall()
-        print(rows)
-        conn.close()
+        try:
+            username = request.form['username']
+            password = request.form['password']
+            cursor = conn.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+            rows = cursor.fetchall()
 
-        if len(rows):
-            return jsonify(code=200,msg='success')
-        else:
+            if len(rows) > 0:
+                return jsonify(code=200,msg='success')
+            else:
+                return jsonify(code=400,msg='error')
+        except:
             return jsonify(code=400,msg='error')
+        finally:
+            conn.close()
 
+# user register
 @app.route('/api/register', methods = ['POST'])
 def register():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
         conn = sqlite3.connect('cits.db')
         print ("Opened database successfully")
-        cursor = conn.execute("SELECT * FROM users WHERE username = ?", (username,))
-        rows = cursor.fetchall()
+        try:
+            username = request.form['username']
+            password = request.form['password']
+            cursor = conn.execute("SELECT * FROM users WHERE username = ?", (username,))
+            rows = cursor.fetchall()
 
-        if len(rows):
+            if len(rows) > 0:
+                # Check whether the user already exists 
+                return jsonify(code=400,msg='username has exist')
+            else:
+                try:
+                    conn.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+                    conn.commit()
+                    print('register success')
+                    return jsonify(code=200,msg='success')
+                except:
+                    return jsonify(code=400,msg='error')
+                finally:
+                    conn.close()
+        except:
+            return jsonify(code=400,msg='error')
+        finally:
             conn.close()
-            return jsonify(code=400,msg='username has exist')
-        else:
-            try:
-                conn.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
-                conn.commit()
-                print('register success')
-                return jsonify(code=200,msg='success')
-            except:
-                return jsonify(code=400,msg='error')
-            finally:
-                conn.close()
 
+# get units
 @app.route('/api/units', methods = ['GET'])
 def getUnit():
     conn = sqlite3.connect('cits.db')
@@ -60,6 +72,7 @@ def getUnit():
     conn.close()
     return jsonify(code=200,data=rows)
 
+# get unit by id
 @app.route('/api/unitsById', methods = ['GET'])
 def getUnitById():
     conn = sqlite3.connect('cits.db')
@@ -73,6 +86,7 @@ def getUnitById():
     else:
         return jsonify(code=200)
 
+# get chapters
 @app.route('/api/chapters', methods = ['GET'])
 def getChapters():
     conn = sqlite3.connect('cits.db')
@@ -83,6 +97,7 @@ def getChapters():
     conn.close()
     return jsonify(code=200,data=rows)
     
+# get sections
 @app.route('/api/sections', methods = ['GET'])
 def getSections():
     conn = sqlite3.connect('cits.db')
@@ -92,7 +107,8 @@ def getSections():
     rows = cursor.fetchall()
     conn.close()
     return jsonify(code=200,data=rows)
-    
+
+# get quiz
 @app.route('/api/quiz', methods = ['GET'])
 def getQuiz():
     conn = sqlite3.connect('cits.db')
@@ -105,7 +121,8 @@ def getQuiz():
         return jsonify(code=200,data=rows[0])
     else:
         return jsonify(code=200)
-    
+
+# get questions
 @app.route('/api/questions', methods = ['GET'])
 def getQuestions():
     conn = sqlite3.connect('cits.db')
@@ -114,9 +131,10 @@ def getQuestions():
     cursor = conn.execute("SELECT * FROM questions WHERE QuizID = ?", (quizId,))
     rows = cursor.fetchall()
     result = []
-    print(rows)
+
     if len(rows) > 0:
         try:
+            # get answers
             for index in range(len(rows)):
                 cur = conn.execute("SELECT * FROM quizAnswers WHERE QuestionID = ?", (rows[index][0],))
                 ansRows = cur.fetchall()
@@ -139,7 +157,8 @@ def getQuizAnswers():
     rows = cursor.fetchall()
     conn.close()
     return jsonify(code=200,data=rows)
-    
+
+# get user has learned chapters
 @app.route('/api/userLearn', methods = ['GET'])
 def getUserLearn():
     conn = sqlite3.connect('cits.db')
@@ -155,7 +174,7 @@ def getUserLearn():
     else:
         return jsonify(code=200)
 
-            
+# save user has learned chapters       
 @app.route('/api/userLearn', methods = ['POST'])
 def setUserLearn():
     conn = sqlite3.connect('cits.db')
@@ -166,6 +185,7 @@ def setUserLearn():
     cursor = conn.execute("SELECT * FROM userLearn WHERE username = ? AND UnitID = ?", (username, unitId))
     rows = cursor.fetchall()
     if len(rows) > 0:
+        # if has saved, save only when it is greater than the current chapter
         if int(chapterId) > int(rows[0][2]):
             try:
                 conn.execute("UPDATE userLearn set chapter = ? WHERE username = ? AND UnitID = ?", (chapterId, username, unitId))
@@ -180,6 +200,7 @@ def setUserLearn():
             return jsonify(code=200)
     else:
         try:
+            # Save a new chapter
             conn.execute("INSERT INTO userLearn (username, UnitID, chapter) VALUES (?, ?, ?)", (username, unitId, chapterId))
             conn.commit()
             print('insert success')
@@ -189,6 +210,7 @@ def setUserLearn():
         finally:
             conn.close()
 
+# get user's score
 @app.route('/api/userQuiz', methods = ['GET'])
 def getUserQuiz():
     conn = sqlite3.connect('cits.db')
@@ -200,6 +222,7 @@ def getUserQuiz():
     conn.close()
     return jsonify(code=200,data=rows)
 
+# save user's score
 @app.route('/api/userQuiz', methods = ['POST'])
 def postUserQuiz():
     conn = sqlite3.connect('cits.db')
