@@ -12,45 +12,56 @@
     <div class="nav">
         <div>
             <h2><a href="./index.htm">Cits</a></h2>
-			<div class="menu">
+            <div class="menu">
                 <ul>
-                    <li><h3 id="user"></h3></li>
+                    <li>
+                        <h3 id="user"></h3>
+                    </li>
                 </ul>
-			</div>
+            </div>
         </div>
     </div>
     <div style="display:flex;">
-        <div class="cusContainer col-xs-11 col-sm-11 col-md-11 col-lg-11">
-        <h2 class="center">Courses</h3> <a class="back" href="./index.html">Back</a>
-        <div class="center">
-            <h3 id="unitTitle"></h3><p id="unitOverview"></p><hr />
-            <div>
-                <div class="panel panel-info" id="panel">
-                    <ul class="list-group">
-                        <li class="list-group-item hidden chapter-item">You have learn Chapter <strong id="chapter"></strong>
-                            <div class="pull-right" id="continue" onclick="continueLearn(event);"></div>
-                        </li>
-                        <li class="list-group-item hidden quiz-item">You have finished the quiz <strong id="quizNumber"></strong> times.
-                            <div class="pull-right btn" style="margin: -8px 0;" onclick="quiz(event);">Quiz</div>
-                        </li>
-                        <li class="list-group-item hidden score-item">Your Score:<div class="progress"></div></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="cus-container col-xs-11 col-sm-11 col-md-11 col-lg-11">
+            <h2 class="center">Courses</h2>
+            <a class="back" href="./index.html">Back</a>
             <div class="center">
-                <table class="table table-striped" style="margin: 0 auto;" id="chapters">
-                    <tr>
-                        <th width="100px">ID</th>
-                        <th width="300px">Chapers Name</th>
-                        <th width="500px">Chapers Detail</th>
-                        <th width="100px">Operation</th>
-                    </tr>
-                </table>
+                <h3 id="unitTitle"></h3>
+                <p id="unitOverview"></p>
+                <hr />
+                <div>
+                    <div class="panel panel-info" id="panel">
+                        <ul class="list-group">
+                            <li class="list-group-item hidden chapter-item">
+                                You have learn Chapter <strong id="chapter"></strong>
+                                <div class="pull-right" id="continue" onclick="continueLearn(event);"></div>
+                            </li>
+                            <li class="list-group-item hidden quiz-item">
+                                You have finished the quiz <strong id="quizNumber"></strong> times.
+                                <div class="pull-right btn" style="margin: -8px 0;" onclick="quiz(event);">
+                                    Quiz
+                                </div>
+                            </li>
+                            <li class="list-group-item hidden score-item">
+                                Your Score:
+                                <div class="progress"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="center">
+                    <table class="table table-striped" style="margin: 0 auto;" id="chapters">
+                        <tr>
+                            <th width="100px">ID</th>
+                            <th width="300px">Chapers Name</th>
+                            <th width="500px">Chapers Detail</th>
+                            <th width="100px">Operation</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    
 </body>
 <script type="text/javascript" src="../static/js/checkLogin.js"></script>
 <script type="text/javascript" src="../static/js/learn.js"></script>
