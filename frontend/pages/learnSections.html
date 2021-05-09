@@ -4,6 +4,7 @@
 <head>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/learnSections.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
@@ -26,16 +27,22 @@
             </div>
         </div>
     </div>
-    <div style="display:flex;">
+    <div class="flex-container">
         <div class="cus-container col-xs-11 col-sm-11 col-md-11 col-lg-11">
             <h2 class="center">Courses</h2>
-            <a class="back" onclick="history.back();">Back</a>
-            <button class="right btn" style="width: 140px;" onclick="addLearn(event);">
+            <a class="back" href="./learn.html">&lt;&lt; Back</a>
+            <button class="right btn learn-btn" onclick="addLearn(event);">
                 Record progress
             </button>
-            <div class="center">
-                <div class="center" id="learn"></div>
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 list-group" id="left-nav">
+                    <h4>Title list</h4>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 learn-container">
+                    <div class="center" id="learn"></div>
+                </div>
             </div>
+
         </div>
     </div>
 </body>

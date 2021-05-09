@@ -4,6 +4,7 @@
 <head>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/learn.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
@@ -24,10 +25,10 @@
             </div>
         </div>
     </div>
-    <div style="display:flex;">
+    <div class="flex-container">
         <div class="cus-container col-xs-11 col-sm-11 col-md-11 col-lg-11">
             <h2 class="center">Courses</h2>
-            <a class="back" href="./index.html">Back</a>
+            <a class="back" href="./index.html">&lt;&lt; Back</a>
             <div class="center">
                 <h3 id="unitTitle"></h3>
                 <p id="unitOverview"></p>
@@ -41,7 +42,7 @@
                             </li>
                             <li class="list-group-item hidden quiz-item">
                                 You have finished the quiz <strong id="quizNumber"></strong> times.
-                                <div class="pull-right btn" style="margin: -8px 0;" onclick="quiz(event);">
+                                <div class="pull-right btn quiz-btn" onclick="quiz(event);">
                                     Quiz
                                 </div>
                             </li>
@@ -53,12 +54,11 @@
                     </div>
                 </div>
                 <div class="center">
-                    <table class="table table-striped" style="margin: 0 auto;" id="chapters">
+                    <table class="table table-striped chapters-table" id="chapters">
                         <tr>
-                            <th width="100px">ID</th>
-                            <th width="300px">Chapers Name</th>
-                            <th width="500px">Chapers Detail</th>
-                            <th width="100px">Operation</th>
+                            <th width="300px" class="center">Chapers Name</th>
+                            <th width="500px" class="center">Chapers Detail</th>
+                            <th width="100px" class="center">Operation</th>
                         </tr>
                     </table>
                 </div>

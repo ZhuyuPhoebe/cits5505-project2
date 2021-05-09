@@ -63,70 +63,8 @@ html, body {
     width: 84px;
 }
 
-.canvas {
-  text-align: center;
-  background: black;
-  position: relative;
-}
-
-.tabs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-}
-
-.tabs li {
-    width: 80px;
-    padding: 8px 16px;
-}
-
-.curtab {
-    background-Color: #FFFFFF;
-    cursor: hand;
-    border-bottom: 1 solid #ffffff;
-    color: #07519A;
-    font-size:10.5pt;
-    font-weight: bold;
-}
-
-.notab {
-    background-Color: #EBF3FB;
-    cursor: hand;
-    color: #07519A;
-    font-size:10.5pt;
-}
-
-.topTenContainer {
-    margin: 0 40px;
-}
-
 .cus-container {
     margin: 24px auto;
-}
-.title {
-	margin: 24px;
-}
-
-.title h2 {
-	display: inline-block;
-}
-
-#error {
-    color: red;
-}
-
-.sign-up-btn {
-	float: right;
-	margin-top: 20px;
-}
-
-.loginBtn {
-	text-align: center;
-}
-
-.loginBtn button {
-	width: 200px;
 }
 
 input[type=text] {
@@ -146,23 +84,12 @@ hr {
 	background-color: darkslategray;
 }
 
-#add.btn{
-    margin: 0;
-}
-
-.cusButton {
-    margin: 0 12px;
-}
-
-.edit, .delete {
-	width: 80px;
-	height: 30px;
-	border: 0 none transparent;
-	margin: 5px;
-}
-
 .back {
     position: absolute;
     top: 24px;
     font-size: 16px;
+}
+
+.flex-container {
+    display:flex;
 }

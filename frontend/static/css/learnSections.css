@@ -1,0 +1,40 @@
+para, definition {
+    text-align: left;
+    display: block;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+#left-nav {
+    position: fixed;
+    left: 36px;
+    top: 232px;
+    background: aliceblue;
+    padding: 16px;
+}
+
+.learn-container {
+    margin-left: 36%;
+}
+
+example {
+    padding: 12px;
+    margin: 12px;
+    background: #D4CDCD;
+    display: block;
+    text-align: left;
+}
+
+code {
+    display: block;
+    text-align: left;
+    margin: 12px 0;
+    padding: 12px;
+}
+
+.learn-btn {
+    width: 140px;
+}

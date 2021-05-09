@@ -6,9 +6,8 @@ function renderChapters(chapters) {
         var title = chapter[1];
         var detail = chapter[2];
         html += "<tr id='" + id + "'>";
-        html += "<td>" + id + "</td>";
         html += "<td>" + title + "</td>";
-        html += "<td>" + detail + "</td>";
+        html += "<td class='clamp'>" + detail + "</td>";
         html += "<td>";
         // Add buttons for learning chapters
         html += "<a class='btn' style='margin:12px 0;' data-id='" + id + "' onclick='learn(event)' >Learn</a>";
