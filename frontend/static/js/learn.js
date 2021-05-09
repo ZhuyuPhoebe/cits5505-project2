@@ -17,6 +17,18 @@ function renderChapters(chapters) {
     return html;
 }
 
+function renderTop5(result) {
+    var html = '';
+    for (var i = 0; i < result.length; i++) {
+        var chapter = result[i];
+        var id = chapter[0];
+        var title = chapter[1];
+        var unit = chapter[3];
+        html += "<button data-id='" + id + "' class='list-group-item list-group-item-info' onclick='learn(event)'>" + title + " - Unit " + unit + "</button>";
+    }
+    return html;
+}
+
 function renderScore(score, times) {
     // append score progress bar
     var html = '';
@@ -101,6 +113,20 @@ function renderScore(score, times) {
                 }
             }
         );
+
+        // get chapters top 5
+        $.get('http://localhost:5000/api/hot-chapters',
+            {},
+            function (data) {
+                if (data.code === 200) {
+                    var result = data.data;
+                    var top5Html = renderTop5(result);
+                    // append to DOM
+                    $('#chaptersTop5').append(top5Html);
+                }
+            }
+        );
+
         // Get the user's grades
         $.get('http://localhost:5000/api/userQuiz',
             {
@@ -134,6 +160,8 @@ function renderScore(score, times) {
 function learn(e) {
     e.preventDefault();
     var chapterId = $(e.target).data('id');
+    var unitId = $(e.target).data('unit');
+
     // storage chapter id
     localStorage.setItem("chapter", chapterId);
     location.href = './learnSections.html';
