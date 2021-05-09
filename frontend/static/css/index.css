@@ -1,0 +1,27 @@
+.table-container {
+    display:flex;
+}
+
+.units-table {
+    margin: 0 auto;
+}
+
+.links {
+    margin: 24px auto;
+    width: 900px;
+    background: lavender;
+    padding: 12px 0;
+}
+
+.links > h3 {
+    margin-left: 48px;
+}
+
+.links .row {
+    margin: 24px;
+}
+
+.jquery-img {
+    background: rebeccapurple;
+    padding: 12px 0;
+}

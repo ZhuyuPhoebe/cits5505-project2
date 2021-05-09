@@ -1,3 +1,30 @@
+function renderNav(sections) {
+    var nav = '';
+    for (var i = 0; i < sections.length; i++) {
+        var section = sections[i];
+        var id = section[0];
+        var title = section[1];
+        nav += "<a href='#" + id + "' class='list-group-item list-group-item-success'>" + title + "</a>";
+    }
+    // Append to DOM
+    $('#left-nav').append(nav);
+}
+
+function renderContent(sections) {
+    var html = '<div>';
+    for (var i = 0; i < sections.length; i++) {
+        var section = sections[i];
+        var id = section[0];
+        var title = section[1];
+        var detail = section[2];
+        html += "<h4 id='" + id + "'>" + title + "</h4>";
+        html += "<p>" + detail + "</p><hr />";
+    }
+    html += '</div>';
+    // Append to DOM
+    $('#learn').append(html);
+}
+
 (function () {
     var username = localStorage.getItem("username");
     var chapterId = localStorage.getItem("chapter");
@@ -10,18 +37,8 @@
             function (data) {
                 if (data.code === 200) {
                     var sections = data.data;
-                    var html = '<div>';
-                    for (var i = 0; i < sections.length; i++) {
-                        var chapter = sections[i];
-                        var id = chapter[0];
-                        var title = chapter[1];
-                        var detail = chapter[2];
-                        html += "<h4>" + title + "</h4>";
-                        html += "<p>" + detail + "</p><hr />";
-                    }
-                    html += '</div>';
-                    // Append to DOM
-                    $('#learn').append(html);
+                    renderContent(sections);
+                    renderNav(sections);
                 }
             }
         );
