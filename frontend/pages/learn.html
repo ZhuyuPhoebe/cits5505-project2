@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div style="display:flex;">
+    <div class="flex-container">
         <div class="cus-container col-xs-11 col-sm-11 col-md-11 col-lg-11">
             <h2 class="center">Courses</h2>
             <a class="back" href="./index.html">&lt;&lt; Back</a>
@@ -42,7 +42,7 @@
                             </li>
                             <li class="list-group-item hidden quiz-item">
                                 You have finished the quiz <strong id="quizNumber"></strong> times.
-                                <div class="pull-right btn" style="margin: -8px 0;" onclick="quiz(event);">
+                                <div class="pull-right btn quiz-btn" onclick="quiz(event);">
                                     Quiz
                                 </div>
                             </li>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="center">
-                    <table class="table table-striped" style="margin: 0 auto;" id="chapters">
+                    <table class="table table-striped chapters-table" id="chapters">
                         <tr>
                             <th width="300px" class="center">Chapers Name</th>
                             <th width="500px" class="center">Chapers Detail</th>

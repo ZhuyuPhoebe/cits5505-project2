@@ -1,0 +1,24 @@
+.title {
+	margin: 24px;
+}
+
+.title h2 {
+	display: inline-block;
+}
+
+#error {
+    color: red;
+}
+
+.sign-up-btn {
+	float: right;
+	margin-top: 20px;
+}
+
+.loginBtn {
+	text-align: center;
+}
+
+.loginBtn button {
+	width: 200px;
+}
