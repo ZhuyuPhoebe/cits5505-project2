@@ -1,3 +1,23 @@
+function renderUnits(units) {
+    var html = '';
+    for (var i = 0; i < units.length; i++) {
+        var unit = units[i];
+        var id = unit[0];
+        var title = unit[1];
+        html += "<tr id='" + id + "'>";
+        html += "<td>" + id + "</td>";
+        html += "<td>" + title + "</td>";
+        html += "<td>";
+        // Learn button
+        html += "<a class='btn' style='margin: 12px;' data-id='" + id + "' onclick='learn(event)' >Learn</a>";
+        // Quiz button
+        html += "<a class='btn' style='margin:12px 0;' data-id='" + id + "' onclick='quiz(event)' >Quiz</a>";
+        html += "</td>";
+        html += "</tr>";
+    }
+    return html;
+}
+
 (function () {
     var username = localStorage.getItem("username");
     if (username) {
@@ -7,22 +27,7 @@
             function (data) {
                 if (data.code === 200) {
                     var units = data.data;
-                    var html = '';
-                    for (var i = 0; i < units.length; i++) {
-                        var unit = units[i];
-                        var id = unit[0];
-                        var title = unit[1];
-                        html += "<tr id='" + id + "'>";
-                        html += "<td>" + id + "</td>";
-                        html += "<td>" + title + "</td>";
-                        html += "<td>";
-                        // Learn button
-                        html += "<a class='btn' style='margin: 12px;' data-id='" + id + "' onclick='learn(event)' >Learn</a>";
-                        // Quiz button
-                        html += "<a class='btn' style='margin:12px 0;' data-id='" + id + "' onclick='quiz(event)' >Quiz</a>";
-                        html += "</td>";
-                        html += "</tr>";
-                    }
+                    var html = renderUnits(units);
                     // append to DOM
                     $('#units').append(html);
                 }

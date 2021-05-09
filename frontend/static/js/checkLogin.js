@@ -9,3 +9,9 @@
         window.location.href = './login.html';
     }
 })();
+
+function logout(event) {
+    event.preventDefault();
+    localStorage.removeItem('username');
+    location.href = './login.html';
+}
