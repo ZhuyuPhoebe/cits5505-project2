@@ -191,6 +191,20 @@ class TestMain(unittest.TestCase):
         msg = resp_dict.get('msg')
         self.assertEqual(msg, 'success')
 
+    def test_top_5_chapters(self):
+        """test top 5 chapters"""
+        response = self.client.get("/api/hot-chapters")
+
+        resp_json = response.data
+        resp_dict = json.loads(resp_json)
+        self.assertIn("code", resp_dict)
+        code = resp_dict.get("code")
+        self.assertEqual(code, 200)
+
+        # return information
+        data = resp_dict.get('data')
+        self.assertEqual(len(data), 2)
+
     def test_userLearn_after_save(self):
         """test user has learned chapters after save"""
         response = self.client.get("/api/userLearn?username=root&unitId=2")

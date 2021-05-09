@@ -96,7 +96,7 @@ def getChapters():
     rows = cursor.fetchall()
     conn.close()
     return jsonify(code=200,data=rows)
-    
+
 # get sections
 @app.route('/api/sections', methods = ['GET'])
 def getSections():
@@ -209,6 +209,16 @@ def setUserLearn():
             return jsonify(code=400,msg='error')
         finally:
             conn.close()
+    
+# get chapters top 5
+@app.route('/api/hot-chapters', methods = ['GET'])
+def getChaptersTop5():
+    conn = sqlite3.connect('cits.db')
+    print ("Opened database successfully")
+    cursor = conn.execute("SELECT * FROM chapters AS p WHERE p.ID IN ( SELECT p_top5.chapter FROM ( SELECT chapter FROM userLearn AS od GROUP BY chapter LIMIT 5 ) AS p_top5 )")
+    rows = cursor.fetchall()
+    conn.close()
+    return jsonify(code=200,data=rows)
 
 # get user's score
 @app.route('/api/userQuiz', methods = ['GET'])
