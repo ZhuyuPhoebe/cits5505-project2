@@ -1,3 +1,48 @@
+function renderChapters(chapters) {
+    var html = '';
+    for (var i = 0; i < chapters.length; i++) {
+        var chapter = chapters[i];
+        var id = chapter[0];
+        var title = chapter[1];
+        var detail = chapter[2];
+        html += "<tr id='" + id + "'>";
+        html += "<td>" + id + "</td>";
+        html += "<td>" + title + "</td>";
+        html += "<td>" + detail + "</td>";
+        html += "<td>";
+        // Add buttons for learning chapters
+        html += "<a class='btn' style='margin:12px 0;' data-id='" + id + "' onclick='learn(event)' >Learn</a>";
+        html += "</td>";
+        html += "</tr>";
+    }
+    return html;
+}
+
+function renderScore(score, times) {
+    // append score progress bar
+    var html = '';
+    // If the number of times is 0, the average score is 0, avoiding returning NAN after calculation
+    var average = times > 0 ? (score / times).toFixed(2) : 0;
+    if (average > 80) {
+        html = average + '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: ' + average + '%">';
+        html += '<span class="sr-only">' + average + '</span>';
+        html += '</div>';
+    } else if (average > 60) {
+        html = average + '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + average + '%">';
+        html += '<span class="sr-only">' + average + '</span>';
+        html += '</div>';
+    } else if (average > 40) {
+        html = average + '<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: ' + average + '%">';
+        html += '<span class="sr-only">' + average + '</span>';
+        html += '</div>';
+    } else {
+        html = average + '<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: ' + average + '%">';
+        html += '<span class="sr-only">' + average + '</span>';
+        html += '</div>';
+    }
+    return html;
+}
+
 (function () {
     // get username and unit id
     var username = localStorage.getItem("username");
@@ -51,24 +96,9 @@
             function (data) {
                 if (data.code === 200) {
                     var chapters = data.data;
-                    var html = '';
-                    for (var i = 0; i < chapters.length; i++) {
-                        var chapter = chapters[i];
-                        var id = chapter[0];
-                        var title = chapter[1];
-                        var detail = chapter[2];
-                        html += "<tr id='" + id + "'>";
-                        html += "<td>" + id + "</td>";
-                        html += "<td>" + title + "</td>";
-                        html += "<td>" + detail + "</td>";
-                        html += "<td>";
-                        // Add buttons for learning chapters
-                        html += "<a class='btn' style='margin:12px 0;' data-id='" + id + "' onclick='learn(event)' >Learn</a>";
-                        html += "</td>";
-                        html += "</tr>";
-                    }
+                    var chapterHtml = renderChapters(chapters);
                     // append to DOM
-                    $('#chapters').append(html);
+                    $('#chapters').append(chapterHtml);
                 }
             }
         );
@@ -92,28 +122,9 @@
                         score += Number(quizs[i][2]);
                     }
 
-                    // append score progress bar
-                    var html = '';
-                    var average = (score / quizs.length).toFixed(2);
-                    if (average > 80) {
-                        html = average + '<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: ' + average + '%">';
-                        html += '<span class="sr-only">' + average + '</span>';
-                        html += '</div>';
-                    } else if (average > 60) {
-                        html = average + '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: ' + average + '%">';
-                        html += '<span class="sr-only">' + average + '</span>';
-                        html += '</div>';
-                    } else if (average > 40) {
-                        html = average + '<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: ' + average + '%">';
-                        html += '<span class="sr-only">' + average + '</span>';
-                        html += '</div>';
-                    } else {
-                        html = average + '<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: ' + average + '%">';
-                        html += '<span class="sr-only">' + average + '</span>';
-                        html += '</div>';
-                    }
+                    var progressHtml = renderScore(score, quizs.length);
                     // append to DOM
-                    $('.progress').html(html);
+                    $('.progress').html(progressHtml);
                 }
             }
         );

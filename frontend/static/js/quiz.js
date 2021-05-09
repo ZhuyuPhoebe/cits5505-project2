@@ -1,3 +1,19 @@
+function renderQuestions(questions) {
+    var html = '<form>';
+    for (var i = 0; i < questions.length; i++) {
+        html += '<div class="form-group">';
+        html += '<label class="ques" id="' + questions[i][0] + '">' + questions[i][1] + '</label>';
+        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][3][2] + '"/>' + questions[i][3][1] + '</label></div>';
+        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][4][2] + '"/>' + questions[i][4][1] + '</label></div>';
+        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][5][2] + '"/>' + questions[i][5][1] + '</label></div>';
+        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][6][2] + '"/>' + questions[i][6][1] + '</label></div>';
+        html += '</div>';
+    }
+    // add submit button
+    html += '<div class="form-group"><input type="button" class="btn" onclick="mark(event)" value="Mark"/></div></form>';
+    return html;
+}
+
 (function () {
     var quiz = localStorage.getItem("quiz");
     // get quiz
@@ -21,19 +37,8 @@
             function (data) {
                 if (data.code === 200) {
                     var questions = data.data;
-                    var html = '<form>';
-                    for (var i = 0; i < questions.length; i++) {
-                        html += '<div class="form-group">';
-                        html += '<label class="ques" id="' + questions[i][0] + '">' + questions[i][1] + '</label>';
-                        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][3][2] + '"/>' + questions[i][3][1] + '</label></div>';
-                        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][4][2] + '"/>' + questions[i][4][1] + '</label></div>';
-                        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][5][2] + '"/>' + questions[i][5][1] + '</label></div>';
-                        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][6][2] + '"/>' + questions[i][6][1] + '</label></div>';
-                        html += '</div>';
-                    }
-                    // add submit button
-                    html += '<div class="form-group"><input type="button" class="btn" onclick="mark(event)" value="Mark"/></div></form>';
-                    $('#quiz').html(html);
+                    var questionsHtml = renderQuestions(questions);
+                    $('#quiz').html(questionsHtml);
                 }
             }
         );
@@ -81,5 +86,9 @@ function mark(e) {
         }
     );
     alert("Your score is:" + (score) + "%");
-    location.href = './index.html';
+}
+
+function backHome(e) {
+    e.preventDefault();
+    location.href = './learn.html';
 }
