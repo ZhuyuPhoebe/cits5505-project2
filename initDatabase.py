@@ -32,28 +32,34 @@ conn.execute('''CREATE TABLE IF NOT EXISTS `questions` (
 conn.commit()
 print ("Table questions created successfully")
 
-conn.execute('''INSERT INTO `questions` (`ID`, `Question`, `QuizID`) VALUES
-(1, 'What does HTML5 stand for?', 1),
-(2, 'What is true about the Web Server', 1),
-(3, 'What are the three tiers in order from bottom tier to top tier in a Web System?', 1),
-(4, 'CSS stands for?', 1),
-(5, 'What does the head element used for?', 1),
-(6, 'Are URIs the same as URLs? Why?', 1),
-(7, 'How can you stylize your HTML5 files?', 1),
-(8, 'Is Javascript the same as Java?', 2),
-(9, 'What does DOM stand for?', 2),
-(10, 'What are the purpose of semi colons?', 2),
-(11, 'What is the result of "y + 5 = " + y + 5, when y = 1?', 2),
-(12, 'How do you get the result "x + 10 = 30", when x = 20?', 2),
-(13, 'How can you trigger an event?', 2),
-(14, 'Where is (0, 0) on the HTML5 Canvas element', 2),
-(15, 'What does XML stand for?', 3),
-(16, 'What typeås of elements can I use in an XML file?', 3),
-(17, 'What is the most common way to validate XML documents?', 3),
-(18, 'How does one stylize an XML document?', 3),
-(19, 'What does AJAX stand for?', 3),
-(20, 'What is a favourable aspect of using Ajax?', 3),
-(21, 'What status code represents a successful request?', 3);''')
+conn.execute('''INSERT INTO `questions` (`ID`, `Question`, `QuizID`, `Type`) VALUES
+(1, 'What does HTML5 stand for?', 1, 0),
+(2, 'What is true about the Web Server', 1, 0),
+(3, 'What are the three tiers in order from bottom tier to top tier in a Web System?', 1, 0),
+(4, 'CSS stands for?', 1, 0),
+(5, 'What does the head element used for?', 1, 0),
+(6, 'Are URIs the same as URLs? Why?', 1, 0),
+(7, 'How can you stylize your HTML5 files?', 1, 0),
+(8, 'Is Javascript the same as Java?', 2, 0),
+(9, 'What does DOM stand for?', 2, 0),
+(10, 'What are the purpose of semi colons?', 2, 0),
+(11, 'What is the result of "y + 5 = " + y + 5, when y = 1?', 2, 0),
+(12, 'How do you get the result "x + 10 = 30", when x = 20?', 2, 0),
+(13, 'How can you trigger an event?', 2, 0),
+(14, 'Where is (0, 0) on the HTML5 Canvas element', 2, 0),
+(15, 'What does XML stand for?', 3, 0),
+(16, 'What types of elements can I use in an XML file?', 3, 0),
+(17, 'What is the most common way to validate XML documents?', 3, 0),
+(18, 'How does one stylize an XML document?', 3, 0),
+(19, 'What does AJAX stand for?', 3, 0),
+(20, 'What is a favourable aspect of using Ajax?', 3, 0),
+(21, 'What status code represents a successful request?', 3, 0),
+(22, 'When sending a (  ) request, the client intent is to be able to modify the data contained in the server.', 1, 1),
+(23, 'Within the starting tag of an element, you can specify properties of the element using (  ).', 1, 1),
+(24, 'These are known as the Document Object Model (  ) which we will later discuss how to get elements and attributes for these objects.', 2, 1),
+(25, 'You can either use a inline functions, global elements, or use (  ) to invoke these methods.', 2, 1),
+(26, '(  ) stands for Document type definition.', 3, 1),
+(27, '(  ) is commonly used through XMLHttpRequests, which is request manager objects.', 3, 1);''')
 conn.commit()
 print ("questions Records Insert successfully")
 
@@ -91,7 +97,7 @@ conn.execute('''INSERT INTO `quizanswers` (`ID`, `Answer`, `Correct`, `QuestionI
 (7, 'It is not a part of web systems', 0, 2),
 (8, 'It receives requests for information and data', 1, 2),
 (9, 'Database, GUI Layer, Business layer', 0, 3),
-(10, 'GUI layer, Businesss Layer, Database', 0, 3),
+(10, 'GUI layer, Business Layer, Database', 0, 3),
 (11, 'Business Layer, Database, GUI Layer', 0, 3),
 (12, 'None of the above', 1, 3),
 (13, 'Cascading Sheet System', 0, 4),
@@ -110,7 +116,7 @@ conn.execute('''INSERT INTO `quizanswers` (`ID`, `Answer`, `Correct`, `QuestionI
 (26, 'In a CSS file', 0, 7),
 (27, 'None of the above', 0, 7),
 (28, 'All of the above', 1, 7),
-(29, 'No, one is a compueter language and another is a coffee type', 0, 8),
+(29, 'No, one is a computer language and another is a coffee type', 0, 8),
 (30, 'No, one is a web scripting language and the other is object orientated', 1, 8),
 (31, 'Yes, Javascript is special type of Java', 0, 8),
 (32, 'Yes, Java is a special type of Javascript', 0, 8),
@@ -139,7 +145,7 @@ conn.execute('''INSERT INTO `quizanswers` (`ID`, `Answer`, `Correct`, `QuestionI
 (55, 'Bottom Left', 0, 14),
 (56, 'Top Left', 1, 14),
 (57, 'External Markup Language', 0, 15),
-(58, 'External Management Lanuage', 0, 15),
+(58, 'External Management Language', 0, 15),
 (59, 'Extensible Markup Language', 1, 15),
 (60, 'Extensible Management Language', 0, 15),
 (61, 'The same as those in HTML5', 0, 16),
@@ -161,11 +167,17 @@ conn.execute('''INSERT INTO `quizanswers` (`ID`, `Answer`, `Correct`, `QuestionI
 (77, 'Ajax stylizes your web page with XML and Javascript', 0, 20),
 (78, 'Ajax reloads your webpage quicker than without it', 0, 20),
 (79, 'Ajax is not yet prefered or widely accepted', 0, 20),
-(80, 'Ajax does not relaod a web page after a request', 1, 20),
+(80, 'Ajax does not reload a web page after a request', 1, 20),
 (81, '0', 0, 21),
 (82, '100', 0, 21),
 (83, '200', 1, 21),
-(84, '500', 0, 21);''')
+(84, '500', 0, 21),
+(85, 'POST', 1, 22),
+(86, 'attributes', 1, 23),
+(87, 'DOM', 1, 24),
+(88, 'JQuery', 1, 25),
+(89, 'DTD', 1, 26),
+(90, 'Ajax', 1, 27);''')
 conn.commit()
 print ("chapters quizanswers Insert successfully")
 

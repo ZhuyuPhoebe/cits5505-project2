@@ -16,7 +16,7 @@ def hello():
 def login():
     if request.method == 'POST':
         conn = sqlite3.connect('cits.db')
-        print ("Opened database successfully")
+        
         try:
             username = request.form['username']
             password = request.form['password']
@@ -37,7 +37,7 @@ def login():
 def register():
     if request.method == 'POST':
         conn = sqlite3.connect('cits.db')
-        print ("Opened database successfully")
+
         try:
             username = request.form['username']
             password = request.form['password']
@@ -66,7 +66,7 @@ def register():
 @app.route('/api/units', methods = ['GET'])
 def getUnit():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     cursor = conn.execute("SELECT * FROM Units")
     rows = cursor.fetchall()
     conn.close()
@@ -76,7 +76,7 @@ def getUnit():
 @app.route('/api/unitsById', methods = ['GET'])
 def getUnitById():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     unitId = request.args['id']
     cursor = conn.execute("SELECT * FROM Units WHERE ID = ?", (unitId,))
     rows = cursor.fetchall()
@@ -90,7 +90,7 @@ def getUnitById():
 @app.route('/api/chapters', methods = ['GET'])
 def getChapters():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     unitId = request.args['id']
     cursor = conn.execute("SELECT * FROM chapters WHERE UnitID = ?", (unitId,))
     rows = cursor.fetchall()
@@ -101,7 +101,7 @@ def getChapters():
 @app.route('/api/sections', methods = ['GET'])
 def getSections():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     chapterId = request.args['id']
     cursor = conn.execute("SELECT * FROM sections WHERE ChapterID = ?", (chapterId,))
     rows = cursor.fetchall()
@@ -112,7 +112,7 @@ def getSections():
 @app.route('/api/quiz', methods = ['GET'])
 def getQuiz():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     unitId = request.args['id']
     cursor = conn.execute("SELECT * FROM quiz WHERE ID = ?", (unitId,))
     rows = cursor.fetchall()
@@ -126,7 +126,7 @@ def getQuiz():
 @app.route('/api/questions', methods = ['GET'])
 def getQuestions():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     quizId = request.args['id']
     cursor = conn.execute("SELECT * FROM questions WHERE QuizID = ?", (quizId,))
     rows = cursor.fetchall()
@@ -151,7 +151,7 @@ def getQuestions():
 @app.route('/api/quizAnswers', methods = ['GET'])
 def getQuizAnswers():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     questionId = request.args['id']
     cursor = conn.execute("SELECT * FROM quizAnswers WHERE QuestionID = ?", (questionId,))
     rows = cursor.fetchall()
@@ -162,12 +162,12 @@ def getQuizAnswers():
 @app.route('/api/userLearn', methods = ['GET'])
 def getUserLearn():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     username = request.args['username']
     unitId = request.args['unitId']
     cursor = conn.execute("SELECT * FROM userLearn WHERE username = ? AND UnitID = ?", (username, unitId))
     rows = cursor.fetchall()
-    print(rows)
+    
     conn.close()
     if len(rows) > 0:
         return jsonify(code=200,data=(rows[0][2]))
@@ -178,7 +178,7 @@ def getUserLearn():
 @app.route('/api/userLearn', methods = ['POST'])
 def setUserLearn():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     username = request.form['username']
     unitId = request.form['unitId']
     chapterId = request.form['chapterId']
@@ -214,7 +214,7 @@ def setUserLearn():
 @app.route('/api/hot-chapters', methods = ['GET'])
 def getChaptersTop5():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     cursor = conn.execute("SELECT * FROM chapters AS p WHERE p.ID IN ( SELECT p_top5.chapter FROM ( SELECT chapter FROM userLearn AS od GROUP BY chapter LIMIT 5 ) AS p_top5 )")
     rows = cursor.fetchall()
     conn.close()
@@ -224,7 +224,7 @@ def getChaptersTop5():
 @app.route('/api/userQuiz', methods = ['GET'])
 def getUserQuiz():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     username = request.args['username']
     unitId = request.args['unitId']
     cursor = conn.execute("SELECT * FROM userQuiz WHERE username = ? AND UnitID = ?", (username, unitId))
@@ -236,7 +236,7 @@ def getUserQuiz():
 @app.route('/api/userQuiz', methods = ['POST'])
 def postUserQuiz():
     conn = sqlite3.connect('cits.db')
-    print ("Opened database successfully")
+    
     username = request.form['username']
     unitId = request.form['unitId']
     score = request.form['score']

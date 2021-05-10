@@ -24,7 +24,7 @@ class TestMain(unittest.TestCase):
         # just name
         response = self.client.post("/api/login", data={"username": "admin"})
 
-        # respoonse.data is response
+        # response.data is response
         resp_json = response.data
         resp_dict = json.loads(resp_json)
         self.assertIn("code", resp_dict)

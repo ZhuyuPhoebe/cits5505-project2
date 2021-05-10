@@ -1,13 +1,20 @@
 function renderQuestions(questions) {
     var html = '<form>';
     for (var i = 0; i < questions.length; i++) {
-        html += '<div class="form-group">';
-        html += '<label class="ques" id="' + questions[i][0] + '">' + questions[i][1] + '</label>';
-        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][3][2] + '"/>' + questions[i][3][1] + '</label></div>';
-        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][4][2] + '"/>' + questions[i][4][1] + '</label></div>';
-        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][5][2] + '"/>' + questions[i][5][1] + '</label></div>';
-        html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][6][2] + '"/>' + questions[i][6][1] + '</label></div>';
-        html += '</div>';
+        if (questions[i][3] == 0) {
+            html += '<div class="form-group">';
+            html += '<label class="ques" id="' + questions[i][0] + '">' + (i + 1) + '. ' + questions[i][1] + '</label>';
+            html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][4][2] + '"/>' + questions[i][4][1] + '</label></div>';
+            html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][5][2] + '"/>' + questions[i][5][1] + '</label></div>';
+            html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][6][2] + '"/>' + questions[i][6][1] + '</label></div>';
+            html += '<div class="radio"><label><input type="radio" name="' + questions[i][0] + '" value="' + questions[i][7][2] + '"/>' + questions[i][7][1] + '</label></div>';
+            html += '</div>';
+        } else {
+            html += '<div class="form-group">';
+            html += '<label class="ques" id="' + questions[i][0] + '">' + (i + 1) + '. ' + questions[i][1] + '</label>';
+            html += '<div class="text">Your answer: <input class="text-questions" type="text" name="' + questions[i][0] + '" data-value="' + questions[i][4][1] + '"/></div>';
+            html += '</div>';
+        }
     }
     // add submit button
     html += '<div class="form-group"><input type="button" class="btn" onclick="mark(event)" value="Mark"/></div></form>';
@@ -57,6 +64,26 @@ function mark(e) {
         // check answer
         if (checked == 1)
             correct++;
+            
+        // Check the blanks
+        var textInput = $('input:text[name=' + name + ']');
+        if ($(textInput).val() && $(textInput).val() == $(textInput).data('value')) {
+            correct++;
+            // Remove the original logo
+            $(textInput).closest('div.text').find('span').remove();
+            $(textInput).closest('div.text').find('p').remove();
+
+            // Add a new logo
+            var result = '<span class="glyphicon glyphicon-remove-sign text-success"></span><p class="text-success">The correct answer: ' + $(textInput).data('value') + '</p>';
+            $(textInput).closest('div.text').append(result);
+        } else {// Remove the original logo 
+            $(textInput).closest('div.text').find('span').remove();
+            $(textInput).closest('div.text').find('p').remove();
+            
+            // Add a new logo
+            var result = '<span class="glyphicon glyphicon-remove-sign text-danger"></span><p class="text-success">The correct answer: ' + $(textInput).data('value') + '</p>';
+            $(textInput).closest('div.text').append(result);
+        }
 
         var inputs = $('input:radio[name=' + name + ']');
         for (var j = 0; j < inputs.length; j++) {
