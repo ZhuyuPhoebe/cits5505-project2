@@ -9,15 +9,18 @@ img {
 }
 
 #left-nav {
-    position: fixed;
+    /* position: fixed;
     left: 36px;
     top: 232px;
     background: aliceblue;
-    padding: 16px;
+    padding: 16px; */
 }
 
 .learn-container {
-    margin-left: 36%;
+    /* margin-left: 36%; */
+    background: #fff;
+    position: relative;
+    z-index: 5;
 }
 
 example {
@@ -37,4 +40,72 @@ code {
 
 .learn-btn {
     width: 140px;
+}
+
+.section_box{
+    width: 100%;
+    float: left;
+}
+.section_box .section{
+    width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    display: flex;
+}
+.section .left{
+    float: left;
+    width: 25%;
+    padding:20px 0;   
+    border-right:20px solid #f7f7f7;
+}
+.section .left h4{
+    /* font-weight: 700; */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.section .list-group-item{
+    background: #fff;
+    color: #333;
+    border:none;
+    padding-left: 40px;
+}
+.section .list-group-item:hover{
+    background: #eee;
+    color: #333;
+}
+.section .right{
+    float: left;
+    width: 75%;
+    padding: 0 40px 74px;
+    position: relative;
+}
+.section .right .right_bg{
+    position: absolute;
+    right:20px;
+    bottom: 0;
+    font-size: 130px;
+    line-height: 1;
+    color: #eee;
+    z-index: 1;
+    font-style: italic;
+}
+.section .left .btn{
+    background: #223c61;
+    margin: 20px 40px;
+}
+.section .left .btn:hover{
+    background:#31517f;
+    color: #fff;
+}
+.section .left{}
+.section .left{}
+.section .left{}
+.section .left{}
+.section .left{}
+.section .left{}
+.section .left{}
+.section .right hr{
+    border: none;
 }

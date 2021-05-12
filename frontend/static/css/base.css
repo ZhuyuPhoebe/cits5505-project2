@@ -135,6 +135,10 @@ a,a:hover{
 .gotop:hover{
     color: #fff; 
     background: #999;
-}.gotop:focus{
-    color: #fff; 
+}
+.btn.focus, 
+.btn:focus, 
+.btn:hover{
+    color: #fff !important;
+
 }
