@@ -11,7 +11,7 @@ function renderUnits(units) {
         // Learn button
         html += "<a class='btn' style='margin: 12px;' data-id='" + id + "' onclick='learn(event)' >Learn</a>";
         // Quiz button
-        html += "<a class='btn' style='margin:12px 0;' data-id='" + id + "' onclick='quiz(event)' >Quiz</a>";
+        html += "<a class='btn btn2' style='margin:12px 0;' data-id='" + id + "' onclick='quiz(event)' >Quiz</a>";
         html += "</td>";
         html += "</tr>";
     }
@@ -19,6 +19,7 @@ function renderUnits(units) {
 }
 
 (function () {
+    banner();//banner
     var username = localStorage.getItem("username");
     if (username) {
         // get units
@@ -51,4 +52,52 @@ function quiz(e) {
     // Storage quiz id
     localStorage.setItem("quiz", unitId);
     location.href = './quiz.html';
+}
+
+//banner
+function banner() {
+    var $banner = $("#wrap"),
+        $pic = $("#pic"),
+        $list =$("#list li"),
+        index = 0,
+        timer = null;
+    // clear time
+    if (timer) {
+        clearInterval(timer);
+        timer = null;
+    }
+    // auto
+    timer = setInterval(autoPlay, 2000);    
+    function autoPlay() {
+        index++;
+        if (index >= $list.length) {
+            index = 0;
+        }
+        changeImg(index);
+    }
+    // changer
+    function changeImg(curIndex) {
+        for (var j = 0; j < $list.length; j++) {
+            $list[j].className = "";
+        }
+        $list[curIndex].className = "on";
+        $pic[0].style.marginTop = -500 * curIndex + "px";
+        index = curIndex;
+    }
+    // stop
+    $banner.onmouseover = function() {
+        clearInterval(timer);
+    }
+    // nest
+    $banner.onmouseout = function() {
+        timer = setInterval(autoPlay, 2000);
+    }
+    // 
+    for (var i = 0; i < $list.length; i++) {
+        $list[i].id = i;
+        $list[i].onmouseover = function() {
+            clearInterval(timer);
+            changeImg(this.id);
+        }
+    }
 }

@@ -21,3 +21,200 @@
     background: rebeccapurple;
     padding: 12px 0;
 }
+
+/* banner */
+.main{
+    float: left;
+    width: 100%;
+    margin:20px 0;
+    /* background: #F7F7F7; */
+    /* min-height:800px; */
+}
+.banner{
+    margin: 0 auto;
+    width: 1200px;
+    height: 500px;
+    position:relative;
+    overflow:hidden;
+}
+.banner img{        
+    width: 1200px;
+    height: 500px;
+    border-radius: 10px;
+}
+.banner ul {
+    position:absolute;
+    margin-top: 0;
+}
+.banner ul li {
+	height:500px;
+}
+.banner ol {
+	position:absolute;
+	right:10px;
+    bottom:10px;
+    text-align: center;
+}
+.banner ol li {
+	height:20px;
+	width:20px;
+	background:#ddd;
+	border-radius:50%;
+	margin-left:5px;
+	color:#959490;
+	float:left;
+	text-align:center;
+    cursor:pointer;
+}
+.banner ol .on {
+	background:#8F9E9E;
+    color:#fff;
+    width: 30px;
+    border-radius: 10px;
+}
+
+
+.courses_box{
+    width: 100%;
+    float: left;
+
+}
+.courses_box .flex-container{
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+}
+.courses_box .courses{
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+
+}
+.courses_box .btn{
+    background:#223c61;
+    width: 130px;
+    height:50px;
+    padding:  0 30px;
+    line-height:50px;
+}
+.courses_box .btn:hover{
+    background:#31517f;
+    color: #fff;
+}
+.courses_box .btn2{
+    background:#cb1e36;
+}
+.courses_box .btn2:hover{
+    background:#cf3449;
+}
+.courses_box .center{
+    padding: 5px 0 30px;
+    margin: 0;
+}
+.courses_box table th,.courses_box table td{
+    border: 1px solid #eee;
+    padding: 5px 0;
+}
+.courses_box table th{
+   text-align: center;
+   padding: 10px 0;
+   background: #eee;
+}
+.courses_box .units-table{
+    width: 98%;
+}
+.courses h3,.courses p{
+    padding-left: 20px;
+}
+
+.Links_box{
+    width: 100%;
+    float: left;
+}
+.Links_box .links{
+    width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    padding:30px 20px;
+}
+.Links_box .links .row{
+    margin: 0;
+}
+.Links_box .links h3,.Links_box .links p{
+    padding:0 0 18px 18px;
+    margin: 0;
+
+}
+.Links_box .btn-primary{
+    background:#223c61;
+}
+.Links_box .btn-primary:hover{
+    background:#31517f;
+    color: #fff;
+}
+
+.aboutus_box{
+    width: 100%;
+    float: left;
+}
+.aboutus_box .aboutus{
+    width: 1200px;
+    background: #fff;
+    padding: 20px 33px;
+    margin: 20px auto 0;
+
+}
+
+.aboutus_box .aboutus_list{
+    padding-left:70px;
+    line-height: 2;
+    border-bottom: 1px solid #eee;
+    position: relative;
+
+}
+.aboutus_box .aboutus_list:last-child{
+    border-bottom: none;
+
+}
+.aboutus_box .aboutus_list h2{
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.aboutus_box .aboutus_list p{
+    padding-bottom: 20px;
+}
+.aboutus_box .aboutus_list span{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-image: url('../../pages/img/iconbg.png');
+    background-repeat: no-repeat;
+    background-size: 72px;
+    background-position: 0 0;
+    width: 72px;
+    height: 50px;
+    display: block;
+
+}
+.aboutus_box .aboutus_list .list2{
+    background-position: 0 -64px ;
+}
+.aboutus_box .aboutus_list .list3{
+    background-position: 0 -140px;
+}
+.aboutus_box .aboutus_list .list4{
+    background-position: 0 -205px;
+}
+.aboutus_box .aboutus_top{
+    
+    border-bottom: 1px solid #eee;
+}
+.aboutus_box{}
+
+
+.thumbnail:hover{
+    border-color: #223c61;
+}

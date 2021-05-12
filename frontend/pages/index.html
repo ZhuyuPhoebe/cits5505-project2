@@ -5,13 +5,21 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css">
     <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/base.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="nav">
-        <div>
+    <div class="top_box">
+        <div class="top">
+            <em>Hello,</em>
+            <span id="user"></span> 
+            <i>|</i>       
+            <input class="logout" type="button" value="Logout" onclick="logout(event)" />
+        </div>
+
+        <!-- <div>
             <h2>
                 <a href="./index.html">Cits</a>
             </h2>
@@ -25,9 +33,171 @@
                     </li>
                 </ul>
             </div>
+        </div> -->
+    </div>
+    <div class="header_box">
+        <div class="header">
+            Welcome To Network College
+        </div>
+        <div class="menu_box">
+            <ul>
+                <li class="on"><a href="./index.html">home</a></li>
+                <li><a href="./info.html">test</a></li>
+                <li><a href="./aboutMe.html">achievement</a></li>
+                <li><a href="./signUp.html">sign up</a></li>
+            </ul>
+        </div>
+    </div> 
+    <div class="main">
+        <div class="banner" id="banner">
+            <ul id="pic">        
+                <li><a href="./index.html"><img src="../pages/img/03.jpg" alt=""></a></li>
+                <li><a href="./info.html"><img src="../pages/img/02.jpg" alt=""></a></li>
+                <li><a href="./aboutMe.html"><img src="../pages/img/01.jpg" alt=""></a></li>
+            </ul>
+            <ol id="list">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>  
+    </div>
+    <div class="courses_box">
+        <div class="flex-container">
+            <div class="courses cus-container col-xs-10 col-sm-8 col-md-8 col-lg-8">
+                <h3>Courses</h3>
+                <p>Please start studying</p>
+                <div class="center">
+                    <table class="units-table" id="units">
+                        <tr>
+                            <th width="200px">Course ID</th>
+                            <th width="400px">Course Name</th>
+                            <th width="400px">Operation</th>
+                        </tr>
+                    </table>
+                </div>
+                <!-- <div class="courses_bg">
+                    <div class="">courese</div>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <div class="aboutus_box">
+        <div class="aboutus">
+            <div class="aboutus_top">                
+                <h3>About Us</h3>
+                <p>In Network College,you can find all the website building tutorials you need.From basic HTML to CSS, and even advanced HTML5,CSS3,XML,and Ajax.Are you ready?
+                </p>
+            </div>
+            <div class="aboutus_list">
+                <span></span>
+               <h2>Complete website technical reference manual</h2> 
+               <p>Our reference manual covers all aspects of website technology.
+                <br>Including W3C standard technology: HTML, CSS, XML. And other technologies, such as JavaScript, XML, Ajax, etc.</p>
+            </div>
+            <div class="aboutus_list">
+                <span class="list2"></span>
+               <h2>Online case testing tool</h2> 
+               <p>At Network College, we provide many examples.
+                <br>By using our online test, you can learn a lot about website building.</p>
+            </div>
+            <div class="aboutus_list">
+                <span class="list3"></span>
+               <h2>Quick and easy to understand way of learning</h2> 
+               <p>Every inch of time is worth every inch of money. Therefore, we provide you with quick and easy to understand learning content.
+                   <br>Here, you can get any knowledge you need through an easy to understand and convenient mode.
+               </p>
+            </div>
+            <div class="aboutus_list">
+                <span class="list4"></span>
+               <h2>What if we don't have enough time</h2> 
+               <p>We can record your learning progress, so that you can continue to study next time.
+                   <br>You can continue to learn anytime, anywhere.
+               </p>
+            </div>
+
+            
         </div>
     </div>
-    <div class="flex-container">
+    <div class="Links_box">
+        <div class="links">
+            <h3>Friend Links</h3>
+            <p>Learning is the ladder of progress. If you want to learn better, you can click the link below.</p>
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./img/logo-w3c-mobile-lg.png" alt="w3c">
+                        <div class="caption">
+                            <h3>W3C School</h3>
+                            <p>The World Wide Web Consortium (W3C) is an international community where Member organizations,
+                                a full-time staff, and the public work together to develop Web standards. Led by Web
+                                inventor and Director Tim Berners-Lee and CEO Jeffrey Jaffe, W3C's mission is to lead the
+                                Web to its full potential. Contact W3C for more information.</p>
+                            <p>
+                                <a href="https://www.w3.org/" class="btn btn-primary" role="button">Go to &gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./img/v5-new-logo.png" alt="bootstrap">
+                        <div class="caption">
+                            <h3>Bootstrap</h3>
+                            <p>News and announcements for all things Bootstrap, including new releases, Bootstrap Themes,
+                                and Bootstrap Icons.</p>
+                            <p>
+                                <a href="https://blog.getbootstrap.com/" class="btn btn-primary" role="button">Go to
+                                    &gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./img/logo-jquery.png" alt="jquery" class="jquery-img">
+                        <div class="caption">
+                            <h3>JQuery</h3>
+                            <p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML
+                                document traversal and manipulation, event handling, animation, and Ajax much simpler with
+                                an easy-to-use API that works across a multitude of browsers. With a combination of
+                                versatility and extensibility, jQuery has changed the way that millions of people write
+                                JavaScript.</p>
+                            <p>
+                                <a href="https://jquery.com/" class="btn btn-primary" role="button">Go to &gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="thumbnail">
+                        <img src="./img/XML_com_logo.svg" alt="xml">
+                        <div class="caption">
+                            <h3>XML.com</h3>
+                            <p>XML.com contains curated information aimed at professionals in fields where XML is widely
+                                used. These include publishing (for example, technical documentation and technical
+                                publishing) and healthcare (for example, HL7 and related work).</p>
+                            <p>
+                                <a href="https://www.xml.com/" class="btn btn-primary" role="button">Go to &gt;&gt;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOP -->
+    <a href="#" class="gotop">^<br>TOP</a>
+    <!-- Copyright -->
+    <div class="footer_box">
+        <div class="footer">
+            The content provided in this website is only for training and testing, and the correctness of the content is not guaranteed. 
+            <br>Through the use of the site content, the risk has nothing to do with the site. All rights reserved.Copyright 2021 zhuyu 
+        </div> 
+    </div> 
+    <!-- <div class="flex-container">
         <div class="cus-container col-xs-10 col-sm-8 col-md-8 col-lg-8">
             <h3 class="center">Courses</h3>
             <p class="center">Please start studying</p>
@@ -105,7 +275,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </body>
 <script type="text/javascript" src="../static/js/checkLogin.js"></script>

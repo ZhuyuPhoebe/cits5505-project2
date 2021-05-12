@@ -5,69 +5,94 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css">
     <link rel="stylesheet" type="text/css" href="../static/css/learn.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/base.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="nav">
-        <div>
-            <h2><a href="./index.html">Cits</a></h2>
-            <div class="menu">
-                <ul>
-                    <li>
-                        <h3 id="user"></h3>
-                    </li>
-                    <li>
-                        <input class="btn" type="button" value="Logout" onclick="logout(event)" />
-                    </li>
-                </ul>
-            </div>
+    <div class="top_box">
+        <div class="top">
+            <em>Hello,</em>
+            <span id="user"></span> 
+            <i>|</i>       
+            <input class="logout" type="button" value="Logout" onclick="logout(event)" />
         </div>
-    </div>
-    <div class="flex-container">
-        <div class="cus-container col-xs-9 col-sm-9 col-md-9 col-lg-9">
-            <h2 class="center">Courses</h2>
-            <a class="back" href="./index.html">&lt;&lt; Back</a>
-            <div class="center">
-                <h3 id="unitTitle"></h3>
-                <p id="unitOverview"></p>
-                <hr />
-                <div>
-                    <div class="panel panel-info" id="panel">
-                        <ul class="list-group">
-                            <li class="list-group-item hidden chapter-item">
-                                You have learn Chapter <strong id="chapter"></strong>
-                                <div class="pull-right" id="continue" onclick="continueLearn(event);"></div>
-                            </li>
-                            <li class="list-group-item hidden quiz-item">
-                                You have finished the quiz <strong id="quizNumber"></strong> times.
-                                <div class="pull-right btn quiz-btn" onclick="quiz(event);">
-                                    Quiz
-                                </div>
-                            </li>
-                            <li class="list-group-item hidden score-item">
-                                Your Score:
-                                <div class="progress"></div>
-                            </li>
-                        </ul>
+    </div>    
+    <div class="header_box">
+        <div class="header">
+            Welcome To Network College
+        </div>
+        <div class="menu_box">
+            <ul>
+                <li class="on"><a href="./index.html">home</a></li>
+                <li><a href="./info.html">test</a></li>
+                <li><a href="./aboutMe.html">achievement</a></li>
+                <li><a href="./signUp.html">sign up</a></li>
+            </ul>
+        </div>
+    </div> 
+    <div class="learn_box">    
+        <div class="flex-container">
+            <div class="left" id="chaptersTop5">
+                <h4>Top 5 Chapters</h4>
+                <!-- <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 list-group" id="chaptersTop5">
+                    <h4>Top 5 Chapters</h4>
+                </div> -->
+            </div>
+            <div class="right">
+                <div class="cus-container ">
+                    <h2 class="center">Courses</h2>
+                    <!-- <a class="back" href="./index.html">&lt;&lt; Back</a> -->
+                    <div class="center">
+                        <h3 id="unitTitle"></h3>
+                        <p id="unitOverview"></p>
+                        <hr />
+                        <div>
+                            <div class="panel panel-info" id="panel">
+                                <ul class="list-group">
+                                    <li class="list-group-item hidden chapter-item">
+                                        You have learn Chapter <strong id="chapter"></strong>
+                                        <div class="pull-right" id="continue" onclick="continueLearn(event);"></div>
+                                    </li>
+                                    <li class="list-group-item hidden quiz-item">
+                                        You have finished the quiz <strong id="quizNumber"></strong> times.
+                                        <div class="pull-right btn quiz-btn" onclick="quiz(event);">
+                                            Quiz
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item hidden score-item">
+                                        Your Score:
+                                        <div class="progress"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <table class="table table-striped chapters-table" id="chapters">
+                                <tr>
+                                    <th width="300px" class="center">Chapers Name</th>
+                                    <th width="500px" class="center">Chapers Detail</th>
+                                    <th width="100px" class="center">Operation</th>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div class="center">
-                    <table class="table table-striped chapters-table" id="chapters">
-                        <tr>
-                            <th width="300px" class="center">Chapers Name</th>
-                            <th width="500px" class="center">Chapers Detail</th>
-                            <th width="100px" class="center">Operation</th>
-                        </tr>
-                    </table>
-                </div>
             </div>
         </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 list-group" id="chaptersTop5">
-            <h4>Top 5 Chapters</h4>
-        </div>
     </div>
+
+
+    <!-- TOP -->
+    <a href="#" class="gotop">^<br>TOP</a>
+    <!-- Copyright -->
+    <div class="footer_box">
+        <div class="footer">
+            The content provided in this website is only for training and testing, and the correctness of the content is not guaranteed. 
+            <br>Through the use of the site content, the risk has nothing to do with the site. All rights reserved.Copyright 2021 zhuyu 
+        </div> 
+    </div> 
 </body>
 <script type="text/javascript" src="../static/js/checkLogin.js"></script>
 <script type="text/javascript" src="../static/js/learn.js"></script>
