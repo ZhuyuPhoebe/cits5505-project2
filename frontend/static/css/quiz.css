@@ -5,3 +5,44 @@
 .form-group .text-questions {
     border-color: #CBD5DD;
 }
+.quiz_box{
+    float: left;
+    width: 100%;
+}
+.quiz{
+    width: 1200px;    
+    margin: 20px auto;
+    background: #fff;
+    position: relative;
+    padding: 20px 40px 50px;
+    display: flex;
+}
+.quiz_bg{    
+    position: absolute;
+    right:20px;
+    bottom: 0;
+    font-size: 130px;
+    line-height: 1;
+    color: #eee;
+    z-index: 1;
+    font-style: italic;
+}
+.quiz .btn{
+    background: #223c61;
+}
+.quiz .btn:hover{
+    background:#31517f;
+    color: #fff;
+}
+.quiz .quiz_info{
+    width: 100%;
+}
+.quiz .quiz_info h3{
+    font-weight: 700;
+}
+.quiz .text-questions{
+    border: 1px solid #223c61;
+    border-radius:5px ;
+    display: block;
+    padding: 10px;
+}

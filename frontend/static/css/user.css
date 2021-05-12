@@ -3,7 +3,9 @@
 }
 
 .title h2 {
+	width: 100%;
 	display: inline-block;
+	text-align: center;
 }
 
 #error {
@@ -20,5 +22,112 @@
 }
 
 .loginBtn button {
-	width: 200px;
+    background:#223c61;
+    color: #fff;
+    width: 50%;
+    height:50px;
+    padding:  0 30px;
+    line-height:50px;
+}
+
+.loginBtn button:hover, 
+.loginBtn button:focus{
+    background:#31517f;
+    color: #fff;
+}
+
+.login_top_box{
+    float: left;
+    width: 100%;
+    height:150px;
+    background: #fff;   
+}
+.login_top{
+	position: relative;
+    width: 1200px;
+    height: 150px;
+    margin: 0 auto;
+    line-height: 150px;
+    color: #223c61;
+    font-weight: 700;
+	font-size: 30px;
+	padding-left: 150px;
+    text-shadow: 0px 1px 30px #fff;
+    background: url("../../pages/img/logo.png") no-repeat left bottom;
+    background-size:auto 130px ;
+}
+.login_top .tips{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -15px;
+	width:50%;
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	color: #333;
+	text-shadow: none;
+	font-weight: 400;
+	font-size: 16px;
+}
+.login_box{
+	float: left;
+	width: 100%;
+	
+	background: linear-gradient(to right, #28aed4, #006186);
+    background-size: 200%;
+    transition: background-position .5s;
+}
+.login_box .login{
+	width: 1200px;
+	margin: 0 auto;
+
+}
+.login_box .login .left{
+	width: 750px;
+	height: 417px;
+	float: left;
+	padding: 20px 0;
+    background: url("../../pages/img/login_bg .png") no-repeat center bottom;
+	background-size:340px ;
+	color: #0979a6;
+	position: relative;
+	overflow: hidden;
+}
+.login_box .left p{
+	position: absolute;
+	top: -48px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size:104px;
+	display: inline-block;
+	margin: 0 auto;
+
+}
+.login_box .login_info{
+	width:450px ;
+	float: right;
+	padding: 20px 5%;
+	background: #fff;
+	margin: 30px 0;
+	border-radius: 5%;
+	box-shadow: 1px 1px 1px  #fff;
+}
+.footer_box{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #fff;
+	width: 100%;
+	float: left;
+    min-height:50px;
+    line-height:1.2;
+    background: #fff;   
+    text-align: center; 
+    color: #666;
+}
+.footer{
+	width: 1200px;
+	margin: 20px auto;
 }

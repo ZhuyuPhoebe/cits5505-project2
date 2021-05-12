@@ -10,15 +10,51 @@
 </head>
 
 <body>
-    <div class="nav">
-        <div>
-            <h2>
-                <a href="./index.html">Cits</a>
-            </h2>
+    <div class="login_top_box">
+        <div class="login_top">
+            Welcome To Network College
+            <div class="tips">
+                You have an account. Please
+                <a href="./login.html">
+                    Sign in
+                </a>
+                
+            </div>
         </div>
-
+    </div> 
+    
+    <div class="login_box">
+        <div class="login">
+            <div class="left">
+                <p>REGISTER</p>
+            </div>
+            <div class="login_info" style="display: block;">
+                <form class="form-horizontal">
+                    <div class="title">
+                        <h2>Sign up</h2>
+                        <!-- <a href="./login.html" class="btn btn-primary sign-up-btn">Sign in</a> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Your name</label>
+                        <input type="username" name="username" class="form-control" id="username" placeholder="Username" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Your password</label>
+                        <input name="password" type="password" class="form-control" id="password" placeholder="Password" />
+                    </div>
+                    <div class="form-group loginBtn">
+                        <button type="button" class="btn btn-default" onclick="register(event)">
+                            Sign up
+                        </button>
+                    </div>
+                    <p id="error"></p>
+                </form>
+            </div>
+        </div>
     </div>
-    <div>
+
+
+    <!-- <div>
         <h2 class="center">
             Cits
         </h2>
@@ -46,8 +82,17 @@
                 <p id="error"></p>
             </form>
         </div>
-    </div>
+    </div> -->
 
+
+
+
+    <div class="footer_box">
+        <div class="footer">
+            The content provided in this website is only for training and testing, and the correctness of the content is not guaranteed. 
+            <br>Through the use of the site content, the risk has nothing to do with the site. All rights reserved.Copyright 2021 zhuyu 
+        </div> 
+    </div> 
 </body>
 <script type="text/javascript" src="../static/js/login.js"></script>
 
