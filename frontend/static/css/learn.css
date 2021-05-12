@@ -1,11 +1,16 @@
 table.table td.clamp{
-    display: -webkit-box;
-    max-width: 400px;
+    /* display: -webkit-box;
+    padding-right: 80px;
     line-height: 2;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
+    text-align: left;
+
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{    
+    padding: 20px 20px !important;
 }
 
 .chapters-table {
@@ -15,11 +20,6 @@ table.table td.clamp{
 .quiz-btn {
     margin: -8px 0;
 }
-
-/* #chaptersTop5{
-    margin-top: 40px;
-} */
-
 .learn_box{
     width: 100%;
     float: left;
@@ -40,14 +40,26 @@ table.table td.clamp{
 }
 .learn_box .left h4{
     /* font-weight: 700; */
-    border-bottom: 2px solid #f7f7f7;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
     padding-left: 20px;
 }
 .learn_box .right{
     float: left;
     width: 75%;
-    padding: 0 20px;
+    padding: 0 40px 74px;
+    position: relative;
+}
+
+.learn_box .right .right_bg{
+    position: absolute;
+    right:20px;
+    bottom: 0;
+    font-size: 130px;
+    line-height: 1;
+    color: #eee;
+    z-index: 1;
+    font-style: italic;
 }
 .learn_box .list-group-item-info{
     background: #fff;
@@ -59,8 +71,64 @@ table.table td.clamp{
     background: #eee;
     color: #333;
 }
-.learn_box{}
-.learn_box{}
-.learn_box{}
-.learn_box{}
-.learn_box{}
+.learn_box .right_tips{
+    line-height: 1.8;
+    padding: 10px 0;
+    text-align: justify;
+}
+.learn_box .panel-info{
+    border-color: #ddd;
+}
+.learn_box .right .list-group{
+
+}
+.learn_box .right .list-group li{
+    padding:15px 20px;
+    line-height: 30px;
+    
+}
+.learn_box .right .btn{
+    background: #223c61;
+    margin: 0;
+    
+}
+.learn_box .right .btn:hover{
+    background:#31517f;
+    color: #fff;
+    
+}
+.learn_box .right .progress{
+    width: 200px;
+    padding:10px;
+    height: 50px;
+    line-height: 30px;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #223c61;
+}
+.learn_box .right .table{
+    border: 1px solid #eee;
+}
+.learn_box .right .table>th,.learn_box .right .table>td{
+     border-top: 1px solid #ddd;
+     vertical-align:center;
+}
+
+.learn_box .right .table td>para{
+    display: -webkit-box;
+    padding-right:20px;
+    line-height: 2;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.learn_box .right .cus-container { 
+    background: #fff;
+    z-index: 5;
+    position: relative;
+}
+.learn_box .right h2{
+    font-weight: 700;
+}
