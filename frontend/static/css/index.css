@@ -30,6 +30,18 @@
     /* background: #F7F7F7; */
     /* min-height:800px; */
 }
+/* .banner_bg{
+    margin: 0 auto;
+    width: 1200px;
+    height:300px;
+    position:relative;
+    overflow:hidden;
+}
+.banner_bg img{        
+    width: 1200px;
+    height:300px;
+    border-radius: 10px;
+} */
 .banner{
     margin: 0 auto;
     width: 1200px;

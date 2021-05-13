@@ -19,7 +19,7 @@ function renderUnits(units) {
 }
 
 (function () {
-    banner();//banner
+    // banner();//banner
     var username = localStorage.getItem("username");
     if (username) {
         // get units
