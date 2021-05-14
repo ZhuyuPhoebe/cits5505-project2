@@ -53,7 +53,7 @@
 	font-size: 30px;
 	padding-left: 150px;
     text-shadow: 0px 1px 30px #fff;
-    background: url("../../pages/img/logo.png") no-repeat left bottom;
+    background: url("../../static/img/logo.png") no-repeat left bottom;
     background-size:auto 130px ;
 }
 .login_top .tips{
@@ -88,7 +88,7 @@
 	height: 417px;
 	float: left;
 	padding: 20px 0;
-    background: url("../../pages/img/login_bg .png") no-repeat center bottom;
+    background: url("../../static/img/login_bg .png") no-repeat center bottom;
 	background-size:340px ;
 	color: #0979a6;
 	position: relative;

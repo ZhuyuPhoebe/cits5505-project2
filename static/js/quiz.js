@@ -117,5 +117,5 @@ function mark(e) {
 
 function backHome(e) {
     e.preventDefault();
-    location.href = './learn.html';
+    location.href = 'http://localhost:5000/learn';
 }
