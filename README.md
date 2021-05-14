@@ -11,7 +11,7 @@ This application can be deployed locally, install git and clone the reposistory.
 
 Get the code:
 ```git
-git clone https://github.com/gityizhou/CITS5506-IoT-Project.git
+git clone https://github.com/ZhuyuPhoebe/cits5505-project2.git
 ```
 
 Generate a virtual environment and install dependencies:
@@ -24,7 +24,7 @@ $ pip install -r requirements.txt
 ### Running
 run main function in main.py
 ```python
-py ./backend/main.py
+py main.py
 ```
 
 ## Architecture
@@ -46,7 +46,7 @@ Pages is the folder of pages; Static is the directory for static files, includin
 Unit test includes user login, registration, obtaining different units, different chapters, user's learning progress, test scores and so on.
 
 ```
-py .\backend\test_mian.py
+py .\test_mian.py
 ```
 
 print:

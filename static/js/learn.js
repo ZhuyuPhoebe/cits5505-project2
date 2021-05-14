@@ -164,13 +164,13 @@ function learn(e) {
 
     // storage chapter id
     localStorage.setItem("chapter", chapterId);
-    location.href = './learnSections.html';
+    location.href = 'http://localhost:5000/learnSections';
 }
 
 // Redirect to learning page
 function continueLearn(e) {
     e.preventDefault();
-    location.href = './learnSections.html';
+    location.href = 'http://localhost:5000/learnSections';
 }
 
 // Redirect to quiz page
@@ -179,5 +179,5 @@ function quiz(e) {
     var unitId = localStorage.getItem("unit");
     // Storage quiz id
     localStorage.setItem("quiz", unitId);
-    location.href = './quiz.html';
+    location.href = 'http://localhost:5000/quiz';
 }

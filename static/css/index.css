@@ -207,7 +207,7 @@
     position: absolute;
     top: 35px;
     left: 0;
-    background-image: url('../../pages/img/iconbg.png');
+    background-image: url('../../static/img/iconbg.png');
     background-repeat: no-repeat;
     background-size: 72px;
     background-position: 0 0;

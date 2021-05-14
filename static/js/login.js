@@ -16,7 +16,7 @@ function login(e) {
 			if (data.code === 200) {
 				// storage username
 				localStorage.setItem("username", user);
-				location.href = "./index.html";
+				location.href = "http://localhost:5000/";
 			}
 			else {
 				showErrorTip('Your account number or password is wrong!');
@@ -66,7 +66,7 @@ function register(e) {
 			if (data.code === 200) {
 				alert('Registration succeeded!');
 				// redirect to login
-				location.href = "./login.html";
+				location.href = "http://localhost:5000/login";
 			}
 			else {
 				showErrorTip(data.msg);
