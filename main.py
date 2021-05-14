@@ -256,6 +256,11 @@ def home():
     url_for('static', filename='/')
     return render_template('/index.html')
 
+# frontend aboutUs page
+@app.route('/aboutUs')
+def aboutUsPage():
+    return render_template('/aboutUs.html')
+
 # frontend login page
 @app.route('/login')
 def loginPage():
