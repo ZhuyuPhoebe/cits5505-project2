@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, url_for
 from flask_cors import CORS
 
 import sqlite3
@@ -249,6 +249,37 @@ def postUserQuiz():
         return jsonify(code=400,msg='error')
     finally:
         conn.close()
+
+# frontend home page
+@app.route('/')
+def home():
+    url_for('static', filename='/')
+    return render_template('/index.html')
+
+# frontend login page
+@app.route('/login')
+def loginPage():
+    return render_template('/login.html')
+
+# frontend register page
+@app.route('/register')
+def registerPage():
+    return render_template('/register.html')
+
+# frontend learn page
+@app.route('/learn')
+def learnPage():
+    return render_template('/learn.html')
+
+# frontend learnSections page
+@app.route('/learnSections')
+def learnSectionsPage():
+    return render_template('/learnSections.html')
+
+# frontend quiz page
+@app.route('/quiz')
+def quizPage():
+    return render_template('/quiz.html')
 
 if __name__ == '__main__':
     app.debug = True

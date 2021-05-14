@@ -42,7 +42,7 @@ function learn(e) {
     var unitId = $(e.target).data('id');
     // Storage unit id
     localStorage.setItem("unit", unitId);
-    location.href = './learn.html';
+    location.href = 'http://localhost:5000/learn';
 }
 
 function quiz(e) {
@@ -51,7 +51,7 @@ function quiz(e) {
     var unitId = $(e.target).data('id');
     // Storage quiz id
     localStorage.setItem("quiz", unitId);
-    location.href = './quiz.html';
+    location.href = 'http://localhost:5000/quiz';
 }
 
 //banner

@@ -161,7 +161,7 @@ class TestMain(unittest.TestCase):
 
         # return information
         data = resp_dict.get('data')
-        self.assertEqual(len(data), 7)
+        self.assertEqual(len(data), 9)
 
     def test_userLearn(self):
         """test user has learned chapters"""
@@ -231,7 +231,7 @@ class TestMain(unittest.TestCase):
 
         # return information
         data = resp_dict.get('data')
-        self.assertEqual(len(data), 2)
+        self.assertEqual(len(data), 0)
 
     def test_save_user_quiz(self):
         """test user score"""

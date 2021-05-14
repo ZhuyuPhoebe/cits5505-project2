@@ -6,12 +6,12 @@
         document.getElementById("user").innerHTML = username;
     } else {
         // Redirect to login page
-        window.location.href = './login.html';
+        window.location.href = 'http://localhost:5000/login';
     }
 })();
 
 function logout(event) {
     event.preventDefault();
     localStorage.removeItem('username');
-    location.href = './login.html';
+    location.href = 'http://localhost:5000/login';
 }
