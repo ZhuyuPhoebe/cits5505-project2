@@ -19,7 +19,7 @@ function renderUnits(units) {
 }
 
 (function () {
-    banner();//banner
+    // banner();//banner
     // learnfn();
     var username = localStorage.getItem("username");
     if (username) {

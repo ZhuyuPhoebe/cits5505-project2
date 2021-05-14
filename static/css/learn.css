@@ -131,4 +131,9 @@ table.table td.clamp{
 }
 .learn_box .right h2{
     font-weight: 700;
+    padding:30px 0 30px;
+    font-size: 40px;
+}
+.learn_box .right h3{
+    font-weight: 700;
 }

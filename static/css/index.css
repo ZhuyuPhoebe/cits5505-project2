@@ -225,12 +225,43 @@
 .aboutus_box .aboutus_list .list4{
     background-position: 0 -205px;
 }
-.aboutus_box .aboutus_top{
-    
+.aboutus_box .aboutus_top{    
     border-bottom: 1px solid #eee;
 }
-.aboutus_box{}
-
+.aboutus_top .title{
+    text-align: center;
+    font-size:40px;
+    padding: 10px 0 30px;
+}
+.aboutus_box .aboutus2{
+    position: relative;
+    padding-bottom:150px;
+}
+.aboutus_box .abus_bg{
+    position: absolute;
+    right:20px;
+    bottom: 0;
+    font-size: 130px;
+    line-height: 1;
+    color: #eee;
+    z-index: 1;
+    font-style: italic;
+}
+.aboutus_box .aboutus a{
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+    background: #223c61;
+    display: block;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+.aboutus_box .aboutus a:hover{
+    background: #31517f;
+    color: #fff;
+}
 
 .thumbnail:hover{
     border-color: #223c61;
