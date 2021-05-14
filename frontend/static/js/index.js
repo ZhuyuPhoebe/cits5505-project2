@@ -19,7 +19,8 @@ function renderUnits(units) {
 }
 
 (function () {
-    // banner();//banner
+    banner();//banner
+    // learnfn();
     var username = localStorage.getItem("username");
     if (username) {
         // get units
@@ -53,8 +54,7 @@ function quiz(e) {
     localStorage.setItem("quiz", unitId);
     location.href = './quiz.html';
 }
-
-//banner
+// banner
 function banner() {
     var $banner = $("#wrap"),
         $pic = $("#pic"),

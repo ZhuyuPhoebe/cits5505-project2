@@ -18,6 +18,22 @@
             <i>|</i>       
             <input class="logout" type="button" value="Logout" onclick="logout(event)" />
         </div>
+
+        <!-- <div>
+            <h2>
+                <a href="./index.html">Cits</a>
+            </h2>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <h3 id="user"></h3>
+                    </li>
+                    <li>
+                        <input class="btn" type="button" value="Logout" onclick="logout(event)" />
+                    </li>
+                </ul>
+            </div>
+        </div> -->
     </div>
     <div class="header_box">
         <div class="header">
@@ -25,20 +41,22 @@
         </div>
         <div class="menu_box">
             <ul>
-                <li><a href="./index.html">home</a></li>          
-                <li><a href="./AboutUs.html">About Us</a></li>          
-                <!-- <li><a data-id="1" onclick='learn(event)'>HTML6 & CSS3</a></li>
-                <li><a data-id="2" onclick='learn(event)'>JS & HTML5 Canvas</a></li>
-                <li><a data-id="3" onclick='learn(event)'>XML & Ajax</a></li> -->
+                <li class="on"><a href="./index.html">home</a></li>
+                <li><a href="./aboutus.html">aboutus</a></li>
             </ul>
         </div>
     </div> 
     <div class="main">
+        <div class="banner">
+            <img src="../pages/img/01.jpg" alt="">
+        </div>
+    </div>
+    <!-- <div class="main">
         <div class="banner" id="banner">
             <ul id="pic">        
-                <li><img src="../pages/img/01.jpg" alt="" data-id="1" onclick='quiz(event)'></li>
-                <li><img src="../pages/img/02.jpg" alt=""  data-id="2" onclick='quiz(event)'></li>
-                <li><img src="../pages/img/03.jpg" alt=""  data-id="3" onclick='quiz(event)'></li>
+                <li><a href="./register.html"><img src="../pages/img/01.jpg" alt=""></a></li>
+                <li><a href="./info.html"><img src="../pages/img/02.jpg" alt=""></a></li>
+                <li><a href="./aboutMe.html"><img src="../pages/img/01.jpg" alt=""></a></li>
             </ul>
             <ol id="list">
                 <li class="on"></li>
@@ -46,7 +64,7 @@
                 <li></li>
             </ol>
         </div>  
-    </div>
+    </div> -->
     <div class="courses_box">
         <div class="flex-container">
             <div class="courses cus-container col-xs-10 col-sm-8 col-md-8 col-lg-8">
@@ -61,6 +79,9 @@
                         </tr>
                     </table>
                 </div>
+                <!-- <div class="courses_bg">
+                    <div class="">courese</div>
+                </div> -->
             </div>
         </div>
 
@@ -69,11 +90,7 @@
         <div class="aboutus">
             <div class="aboutus_top">                
                 <h3>About Us</h3>
-                <p>This Web application is a site for users to learn basic HTML, CSS, and JS skills.Users can register as new users on the site, and for registered users, they can log in directly to access the page.
-                <br>After logging in, the user can view the different units available for study.Different units are divided into different chapters and sections.When learning a unit, users can view the chapters they have studied, the number of tests they have passed and the average score.You can choose to continue or start over from a chapter.
-                <br>When entering the chapter, the current learning progress can be recorded, so that the progress can be viewed in the unit page.After studying a unit, you can take a quiz. After submitting the answer, you will be given the correct answer and the score.
-                <br>In Network College,you can find all the website building tutorials you need.From basic HTML to CSS, and even advanced HTML5,CSS3,XML,and Ajax.
-                <br>Are you ready?
+                <p>In Network College,you can find all the website building tutorials you need.From basic HTML to CSS, and even advanced HTML5,CSS3,XML,and Ajax.Are you ready?
                 </p>
             </div>
             <div class="aboutus_list">
@@ -182,7 +199,87 @@
             The content provided in this website is only for training and testing, and the correctness of the content is not guaranteed. 
             <br>Through the use of the site content, the risk has nothing to do with the site. All rights reserved.Copyright 2021 zhuyu 
         </div> 
-    </div>     
+    </div> 
+    <!-- <div class="flex-container">
+        <div class="cus-container col-xs-10 col-sm-8 col-md-8 col-lg-8">
+            <h3 class="center">Courses</h3>
+            <p class="center">Please start studying</p>
+            <div class="center">
+                <table class="units-table" id="units">
+                    <tr>
+                        <th width="100px">Course ID</th>
+                        <th width="300px">Course Name</th>
+                        <th width="300px">Operation</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="links">
+        <h3>Friend Links</h3>
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="./img/logo-w3c-mobile-lg.png" alt="w3c">
+                    <div class="caption">
+                        <h3>W3C School</h3>
+                        <p>The World Wide Web Consortium (W3C) is an international community where Member organizations,
+                            a full-time staff, and the public work together to develop Web standards. Led by Web
+                            inventor and Director Tim Berners-Lee and CEO Jeffrey Jaffe, W3C's mission is to lead the
+                            Web to its full potential. Contact W3C for more information.</p>
+                        <p>
+                            <a href="https://www.w3.org/" class="btn btn-primary" role="button">Go to &gt;&gt;</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="./img/v5-new-logo.png" alt="bootstrap">
+                    <div class="caption">
+                        <h3>Bootstrap</h3>
+                        <p>News and announcements for all things Bootstrap, including new releases, Bootstrap Themes,
+                            and Bootstrap Icons.</p>
+                        <p>
+                            <a href="https://blog.getbootstrap.com/" class="btn btn-primary" role="button">Go to
+                                &gt;&gt;</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="./img/logo-jquery.png" alt="jquery" class="jquery-img">
+                    <div class="caption">
+                        <h3>JQuery</h3>
+                        <p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML
+                            document traversal and manipulation, event handling, animation, and Ajax much simpler with
+                            an easy-to-use API that works across a multitude of browsers. With a combination of
+                            versatility and extensibility, jQuery has changed the way that millions of people write
+                            JavaScript.</p>
+                        <p>
+                            <a href="https://jquery.com/" class="btn btn-primary" role="button">Go to &gt;&gt;</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+                <div class="thumbnail">
+                    <img src="./img/XML_com_logo.svg" alt="xml">
+                    <div class="caption">
+                        <h3>XML.com</h3>
+                        <p>XML.com contains curated information aimed at professionals in fields where XML is widely
+                            used. These include publishing (for example, technical documentation and technical
+                            publishing) and healthcare (for example, HL7 and related work).</p>
+                        <p>
+                            <a href="https://www.xml.com/" class="btn btn-primary" role="button">Go to &gt;&gt;</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
 </body>
 <script type="text/javascript" src="../static/js/checkLogin.js"></script>
 <script type="text/javascript" src="../static/js/index.js"></script>

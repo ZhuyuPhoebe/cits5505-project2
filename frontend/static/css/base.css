@@ -100,10 +100,13 @@ a,a:hover{
     color: #fff;
     padding:0 50px;
 }
-.header_box li a:hover, .header_box .on a{
+.header_box li a:hover{
+    cursor: pointer;
+}
+/* .header_box li a:hover, .header_box .on a{
     background: #fff;
     color: #223c61;
-}
+} */
 
 
 .footer_box{ 
