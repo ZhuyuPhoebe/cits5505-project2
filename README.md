@@ -69,6 +69,32 @@ Ran 9 tests in 0.012s
 OK
 ```
 
+## selenium test
+Test Login and Home Page:
+```
+py .\test_selenium.py
+```
+
+print:
+```
+----------------------------------------------------------------------
+Ran 4 tests in 31.701s
+
+OK
+```
+
+Test Learning Page:
+```
+py .\test_selenium_learn.py
+```
+
+print:
+```
+----------------------------------------------------------------------
+Ran 2 tests in 16.554s
+
+OK
+```
 ## Authors
 
 ZhuyuPhoebe 635608969@qq.com
