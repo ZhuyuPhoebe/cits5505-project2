@@ -38,7 +38,7 @@ class TestMain(unittest.TestCase):
         self.assertEqual(msg, "error")
 
     def test_wrong_name_password(self):
-        """test user name or password"""
+        """test wrong user name or password"""
         response = self.client.post("/api/login", data={"username": "admin", "password": "123456789"})
 
         resp_json = response.data
@@ -50,6 +50,20 @@ class TestMain(unittest.TestCase):
         # return information
         msg = resp_dict.get('msg')
         self.assertEqual(msg, "error")
+
+    def test_correct_name_password(self):
+        """test correct user name or password"""
+        response = self.client.post("/api/login", data={"username": "root", "password": "root"})
+
+        resp_json = response.data
+        resp_dict = json.loads(resp_json)
+        self.assertIn("code", resp_dict)
+        code = resp_dict.get("code")
+        self.assertEqual(code, 200)
+
+        # return information
+        msg = resp_dict.get('msg')
+        self.assertEqual(msg, "success")
 
     def test_register(self):
         """test register when user name has exist"""
@@ -179,17 +193,28 @@ class TestMain(unittest.TestCase):
 
     def test_save_userLearn(self):
         """test save user has learned chapters"""
-        response = self.client.post("/api/userLearn", data={"username": "root", "unitId": 2, "chapterId": 5})
+        userlearn_response = self.client.get("/api/userLearn?username=root&unitId=2")
+        userlearn_resp_dict = json.loads(userlearn_response.data)
 
+        response = self.client.post("/api/userLearn", data={"username": "root", "unitId": 2, "chapterId": 5})
         resp_json = response.data
         resp_dict = json.loads(resp_json)
         self.assertIn("code", resp_dict)
-        code = resp_dict.get("code")
-        self.assertEqual(code, 200)
 
-        # return information
-        msg = resp_dict.get('msg')
-        self.assertEqual(msg, 'success')
+        if (userlearn_resp_dict.get('data') == 5):
+            code = resp_dict.get("code")
+            self.assertEqual(code, 200)
+
+            # return information
+            msg = resp_dict.get('msg')
+            self.assertEqual(msg, None)
+        else:
+            code = resp_dict.get("code")
+            self.assertEqual(code, 200)
+
+            # return information
+            msg = resp_dict.get('msg')
+            self.assertEqual(msg, 'success')
 
     def test_top_5_chapters(self):
         """test top 5 chapters"""
@@ -203,7 +228,7 @@ class TestMain(unittest.TestCase):
 
         # return information
         data = resp_dict.get('data')
-        self.assertEqual(len(data), 2)
+        self.assertEqual(len(data) <= 5, True)
 
     def test_userLearn_after_save(self):
         """test user has learned chapters after save"""
@@ -259,7 +284,7 @@ class TestMain(unittest.TestCase):
 
         # return information
         data = resp_dict.get('data')
-        self.assertEqual(len(data), 1)
+        self.assertEqual(len(data) > 0, True)
 
 if __name__ == '__main__':
     unittest.main()
