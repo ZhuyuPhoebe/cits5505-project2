@@ -40,34 +40,20 @@ The page may not be navigated, because it is viewed layer by layer. Users can ch
 Start way: open index. HTML page to visit
 Plugins, package: Bootstrap page style, jQuery: js operation DOM plug-in library
 
-Pages is the folder of pages; Static is the directory for static files, including CSS and JS files.
+HTML pages is the folder of templates; Static is the directory for static files, including CSS and JS files.
 
 ## unit test
 Unit test includes user login, registration, obtaining different units, different chapters, user's learning progress, test scores and so on.
 
 ```
-py .\test_mian.py
+py .\test_main.py
 ```
 
-print:
-```
-----------------------------------------------------------------------
-Ran 18 tests in 1.090s
-
-OK
-```
 
 ```
 py .\test_db.py
 ```
 
-print:
-```
-----------------------------------------------------------------------
-Ran 9 tests in 0.012s
-
-OK
-```
 
 ## selenium test
 Test Login and Home Page:
@@ -75,28 +61,14 @@ Test Login and Home Page:
 py .\test_selenium.py
 ```
 
-print:
-```
-----------------------------------------------------------------------
-Ran 4 tests in 31.701s
-
-OK
-```
 
 Test Learning Page:
 ```
 py .\test_selenium_learn.py
 ```
 
-print:
-```
-----------------------------------------------------------------------
-Ran 2 tests in 16.554s
-
-OK
-```
 ## Authors
 
-ZhuyuPhoebe 635608969@qq.com
+ZhuyuPhoebe 635608969@qq.com  Student ID：23052724
 
-alexxug lyxxh718@gmail.com
+alexxug lyxxh718@gmail.com  Student ID：22945699
