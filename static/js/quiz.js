@@ -74,7 +74,7 @@ function mark(e) {
             $(textInput).closest('div.text').find('p').remove();
 
             // Add a new logo
-            var result = '<span class="glyphicon glyphicon-remove-sign text-success"></span><p class="text-success">The correct answer: ' + $(textInput).data('value') + '</p>';
+            var result = '<span class="glyphicon glyphicon-ok-sign text-success"></span><p class="text-success">The correct answer: ' + $(textInput).data('value') + '</p>';
             $(textInput).closest('div.text').append(result);
         } else {// Remove the original logo 
             $(textInput).closest('div.text').find('span').remove();
