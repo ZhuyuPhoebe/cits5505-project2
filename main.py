@@ -286,6 +286,10 @@ def learnSectionsPage():
 def quizPage():
     return render_template('/quiz.html')
 
+@app.route('/aboutUs')
+def aboutUsPage():
+    return render_template('/aboutUs.html')
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
